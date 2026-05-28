@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#1E1E1E"
+    android:padding="16dp"
+    android:layout_margin="8dp">
+
+    <TextView
+        android:id="@+id/titleTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Anime Title"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/characterTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Main Character"
+        android:textColor="#CCCCCC"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/powerTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Powers"
+        android:textColor="#AAAAAA"
+        android:textSize="16sp"
+        android:layout_marginTop="5dp"/>
+
+</LinearLayout>
