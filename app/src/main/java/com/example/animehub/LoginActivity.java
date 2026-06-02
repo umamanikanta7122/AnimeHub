@@ -19,12 +19,27 @@ public class LoginActivity extends AppCompatActivity {
 
         loginBtn.setOnClickListener(v -> {
 
-            Intent intent = new Intent(
-                    LoginActivity.this,
-                    MainActivity.class
-            );
+            loginBtn.setText("Loading...");
 
-            startActivity(intent);
+            loginBtn.animate()
+                    .rotation(360)
+                    .setDuration(1000);
+
+            loginBtn.postDelayed(() -> {
+
+                Intent intent = new Intent(
+                        LoginActivity.this,
+                        MainActivity.class
+                );
+
+                startActivity(intent);
+
+                overridePendingTransition(
+                        android.R.anim.fade_in,
+                        android.R.anim.fade_out
+                );
+
+            }, 1500);
 
         });
     }
