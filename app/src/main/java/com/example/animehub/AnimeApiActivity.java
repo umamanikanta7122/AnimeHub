@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 public class AnimeApiActivity extends AppCompatActivity {
 
@@ -24,14 +27,14 @@ public class AnimeApiActivity extends AppCompatActivity {
     ArrayList<Anime> filteredList = new ArrayList<>();
 
     EditText searchAnime;
-
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anime_api);
         recyclerView = findViewById(R.id.recyclerView);
         searchAnime = findViewById(R.id.searchAnime);
-
+        progressBar = findViewById(R.id.progressBar);
         recyclerView.setOnTouchListener((v, event) -> {
             searchAnime.clearFocus();
             return false;
@@ -73,7 +76,7 @@ public class AnimeApiActivity extends AppCompatActivity {
     }
 
     private void loadAnimeFromApi() {
-
+        progressBar.setVisibility(View.VISIBLE);
         // Your Custom Anime
 
         animeList.add(new Anime(
@@ -177,12 +180,21 @@ public class AnimeApiActivity extends AppCompatActivity {
                     filteredList.addAll(animeList);
 
                     adapter.notifyDataSetChanged();
+                    progressBar.setVisibility(View.GONE);
                 }
             }
 
             @Override
             public void onFailure(Call<AnimeResponse> call,
                                   Throwable t) {
+
+                progressBar.setVisibility(View.GONE);
+
+                Toast.makeText(
+                        AnimeApiActivity.this,
+                        "Failed to load anime data",
+                        Toast.LENGTH_SHORT
+                ).show();
 
                 t.printStackTrace();
             }
