@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⬅ Back"
+            android:layout_margin="10dp"/>
+
+        <ImageView
+            android:id="@+id/animeBanner"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/animeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="One Piece"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:padding="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="16dp">
+
+            <TextView
+                android:id="@+id/animeRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⭐ 9.2"
+                android:textColor="#FFD700"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/animeEpisodes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  •  1100 Episodes"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:layout_marginStart="12dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Synopsis"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:paddingStart="16dp"
+            android:paddingTop="20dp"/>
+
+        <TextView
+            android:id="@+id/animeSynopsis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Anime description will appear here..."
+            android:textColor="#DDDDDD"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp"
+            android:padding="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🎬 Preview"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"/>
+
+        <VideoView
+            android:id="@+id/videoPreview"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_margin="16dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

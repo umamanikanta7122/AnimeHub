@@ -24,26 +24,18 @@ public class AnimeListActivity extends AppCompatActivity {
 
         animeList.add(new Anime(
                 "One Piece",
-                "Monkey D. Luffy",
-                "Gear 5, Haki"
+                "https://cdn.myanimelist.net/images/anime/6/73245.jpg",
+                9.2,
+                1100,
+                "Monkey D. Luffy sets out to become the King of the Pirates."
         ));
 
         animeList.add(new Anime(
                 "Naruto",
-                "Naruto Uzumaki",
-                "Rasengan, Sage Mode"
-        ));
-
-        animeList.add(new Anime(
-                "Attack on Titan",
-                "Eren Yeager",
-                "Attack Titan"
-        ));
-
-        animeList.add(new Anime(
-                "Demon Slayer",
-                "Tanjiro Kamado",
-                "Sun Breathing"
+                "https://cdn.myanimelist.net/images/anime/13/17405.jpg",
+                8.8,
+                720,
+                "Naruto Uzumaki dreams of becoming Hokage."
         ));
 
         AnimeAdapter adapter = new AnimeAdapter(animeList);
@@ -52,6 +44,7 @@ public class AnimeListActivity extends AppCompatActivity {
                 new LinearLayoutManager(this)
         );
 
+        recyclerView.setAdapter(adapter);
         recyclerView.setAdapter(adapter);
     }
 }
